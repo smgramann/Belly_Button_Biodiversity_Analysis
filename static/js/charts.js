@@ -51,7 +51,7 @@ function buildMetadata(sample) {
     });
 
   });
-}
+ }
 
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
@@ -72,7 +72,7 @@ function buildCharts(sample) {
     var otu_labels = result.otu_lables;
     var sample_values = result.sample_values;
 
-    console.log(otu_lables);
+    console.log(otu_labels);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -113,7 +113,7 @@ function buildCharts(sample) {
     Plotly.newPlot(); 
 
     // 1. Create the trace for the bubble chart.
-    var bubbleData = [
+    var bubbleData = {
       x: otu_ids,
       y: sample_values,
       type: "bubble",
@@ -124,7 +124,7 @@ function buildCharts(sample) {
           colorscale: "Portland"
         }
    
-    ];
+    };
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
@@ -183,6 +183,6 @@ function buildCharts(sample) {
 
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
-  });
+//   });
 }
-
+}
