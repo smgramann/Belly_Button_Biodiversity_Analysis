@@ -69,7 +69,7 @@ function buildCharts(sample) {
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = result.otu_ids;
-    var otu_labels = result.otu_lables;
+    var otu_labels = result.otu_labels;
     var sample_values = result.sample_values;
 
     console.log(otu_labels);
@@ -79,7 +79,7 @@ function buildCharts(sample) {
     //  so the otu_ids with the most bacteria are last. Chain the slice() method with the map() and reverse() functions to retrieve the top 10 otu_ids sorted in descending order.
 
     var yticks = otu_ids.slice(0, 10).map(id => id).reverse();
-
+    console.log(yticks);
     // 8. Create the trace for the bar chart. 
     
     var barData = [{
@@ -103,14 +103,7 @@ function buildCharts(sample) {
 
 
 // BAR AND BUBBLE CHARTS
-// Create the buildCharts function.
-function buildCharts(sample) {
-  // Use d3.json to load and retrieve the samples.json file 
-  d3.json("samples.json").then((data) => {
-    
 
-    // Deliverable 1 Step 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot(); 
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
@@ -136,7 +129,7 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
-  });
+  };
 
 
 //Gauge Code
@@ -184,5 +177,5 @@ function buildCharts(sample) {
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 //   });
-}
-}
+
+
